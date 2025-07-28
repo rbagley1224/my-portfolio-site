@@ -1,0 +1,978 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-light: #f5f5f0;
+    --text-dark: #2c2c2c;
+    --accent: #c2b9aa;
+    --hover-accent: #a49c8e;
+    --text-muted: #888888;
+    --bg-dark: #1a1a1a;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+
+body.light-mode {
+  background-color: #b89f7f; /* A bit darker and warmer beige */
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Main container: keep your content centered */
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Animation for star twinkle effect */
+@keyframes starsMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--white);
+}
+
+body.dark-mode header {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+body.dark-mode section {
+  background-color: #333;
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode nav {
+  background-color: rgba(30, 30, 30, 0.95); /* Slightly lighter and semi-transparent */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Optional: give it a subtle drop shadow to pop */
+  backdrop-filter: blur(4px); /* Optional: adds a glassy look */
+  color: #fff;
+}
+
+/* Ensure nav links/buttons are visible */
+body.dark-mode nav a,
+body.dark-mode nav button {
+  color: #ffffff;
+}
+
+body.dark-mode nav a:hover {
+  color: var(--accent);
+}
+
+body.dark-mode .form-group {
+  border-color: #555;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  color: var(--white);
+}
+
+/* Style toggle label */
+.dark-mode-toggle {
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+  margin-left: 20px;
+  color: var(--text-dark);
+}
+
+body.dark-mode .dark-mode-toggle {
+  color: var(--white);
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  /* rest of your styling */
+}
+
+/* Navigation */
+
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    z-index: 10000;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: var(--bg-dark);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    transform: scale(1.05);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:focus {
+    outline: 2p solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(135deg, var(--bg-light) 0%, #e8e5db 100%);
+    background-color: var(--bg-dark);
+    color: var(--white);
+}
+
+.front {
+  color: black;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+header p {
+    font-size: 1.2em;
+    color: var(--white);
+}
+
+header h1, header h2, header h3 {
+  color: var(--white);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: white;
+}
+
+h1, h2, h3 {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--bg-dark);
+    letter-spacing: 0.02em;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+/* Section */
+
+section {
+    margin: 40px 0;
+    padding: 40px 20px;
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+section h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent);
+  border-radius: 2px;
+  margin-top: 6px;
+}
+
+.work-intro {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.work-intro img {
+  display: block;
+  margin: 2rem auto; /* centers the image */
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* optional for softer corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* optional for some depth */
+}
+
+.about,
+.skills,
+.contact {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.skills li {
+    background-color: var(--bg-light);
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    font-weight: 500;
+}
+
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 15px;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.services ul {
+  display: block;
+  list-style: disc inside;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-size: 1.1em;
+}
+
+.contact p {
+    max-width: 600px;
+    margin: 0 auto 15px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.contact-button {
+    padding: 12px 24px;
+    font-size: 1em;
+    border: none;
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    border-radius: 6px;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--accent), var(--hover-accent));
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    transition: background 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-button:hover {
+    background-color: var(--hover-accent);
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, var(--hover-accent), var(--accent));
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.contact-button:hover::before {
+  left: 100%;
+}
+
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: var(--text-muted);
+    border-top: 1px solid #ddd;
+}
+
+/* Form Styling */
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.material-icons {
+  margin-right: 0.5rem;
+  color: #555;
+}
+
+input, textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+}
+
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Spinner */
+.spinner {
+  display: none;
+  border: 3px solid #ccc;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 1rem auto;
+}
+
+.spinner::before, .spinner::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top-color: #007bff;
+  animation: spin 1s linear infinite;
+}
+
+.spinner::after {
+  border: 4px solid transparent;
+  border-bottom-color: #00bfff;
+  animation-duration: 1.5s;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success Message */
+.success-message {
+  display: none;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.success-message.visible {
+  opacity: 1;
+  pointer-events: auto;
+  display: block; /* make sure display block is toggled in JS */
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Process steps */
+.process-step {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.2rem;
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow-x: auto; /* in case it overflows on smaller screens */
+  scrollbar-width: none; /* hide scrollbar in Firefox */
+}
+
+.process-step::-webkit-scrollbar {
+  display: none; /* hide scrollbar in Chrome/Safari */
+}
+
+.process-steps-container::-webkit-scrollbar {
+  display: none; /* hide scrollbar Chrome/Safari */
+}
+
+/* Container holding all steps and arrows in a horizontal line */
+.process-steps-container {
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* center horizontally */
+  gap: 1rem; /* spacing between steps and arrows */
+  flex-wrap: nowrap; /* prevent wrapping */
+  overflow-x: auto; /* scroll if too wide */
+  padding: 1rem 0;
+  scrollbar-width: none; /* hide scrollbar Firefox */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border: 2px solid #393a3a;
+  border-radius: 6px;
+  background: #eef6ff;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  min-width: 100px;
+  user-select: none;
+}
+
+.step.active .step-details {
+  display: block;
+}
+
+.step:hover {
+  transform: scale(1.1);
+}
+
+/* Light mode for spans inside work-process section */
+.work-process span {
+  background-color: #f0f0f0;
+  color: #222;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Dark mode for spans inside work-process section */
+body.dark-mode .work-process span {
+  background-color: #2e2e2e;
+  color: #f5f5f5;
+  border: 1px solid #444;
+}
+
+/* Fix arrows inside work-process section */
+.work-process .arrow,
+.work-process span.arrow,
+.work-process i.arrow {
+  background: none !important;
+  border: none !important;
+  color: inherit;
+  box-shadow: none;
+  padding: 1;
+  margin: 0;
+  font-size: inherit;
+  display: inline;
+}
+
+.step-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow {
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: default;
+  transition: transform 0.3s ease;
+  user-select: none;
+  color: var(--text-dark);
+  display: inline-block !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  
+}
+
+.arrow:hover {
+  transform: translateY(6px) !important;
+}
+
+body.dark-mode .arrow {
+  color: #fff;
+}
+
+button,
+.plan-button {
+  background-color: #e0e0e0;
+  color: #222;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover,
+.plan-button:hover {
+  background-color: #cfcfcf;
+}
+
+body.dark-mode button,
+body.dark-mode .plan-button {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .plan-button:hover {
+  background-color: #666;
+}
+
+body.dark-mode .process-step .step {
+  background-color: #fff; /* white background */
+  color: #000; /* black text */
+  border-color: #888; /* optional: to match light border in dark mode */
+}
+
+body.dark-mode .process-step .step-details {
+  color: var(--white); /* ensures step details are also black */
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+#backToTop:hover {
+  background-color: var(--hover-accent);
+}
+
+#star-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* so it doesn’t block clicks */
+  z-index: -1; /* behind everything */
+  display: block; /* removes inline default spacing */
+}
+
+/* Make sure canvas covers full viewport */
+#light-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Dark mode canvas only visible in dark mode */
+body.dark-mode #star-canvas {
+  display: block;
+}
+
+body:not(.dark-mode) #star-canvas {
+  display: none;
+}
+
+/* Light mode canvas only visible in light mode */
+body:not(.dark-mode) #light-canvas {
+  display: block;
+}
+
+body.dark-mode #light-canvas {
+  display: none;
+}
+
+/* Shared canvas styling */
+#star-canvas, #light-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  display: none; /* hidden by default, shown by above rules */
+}
+
+
+.process-step.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.process-step:nth-child(1).animate-in {
+  animation: fadeInUp 0.5s ease forwards;
+}
+.process-step:nth-child(3).animate-in {
+  animation: scaleIn 0.5s ease forwards;
+}
+.process-step:nth-child(5).animate-in {
+  animation: slideLeft 0.5s ease forwards;
+}
+.process-step:nth-child(7).animate-in {
+  animation: slideRight 0.5s ease forwards;
+}
+.process-step:nth-child(9).animate-in {
+  animation: bounceIn 0.5s ease forwards;
+}
+
+.step  {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  user-select: none;
+}
+
+.step-details {
+  margin-top: 0.5rem;
+  max-width: 250px;
+  font-size: 0.9rem;
+  text-align: center;
+  display: none;
+}
+
+.process-step.active .step-details {
+  display: block;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .skills ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+  nav button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0.5rem 1rem;
+    height: auto; /* Allow nav to expand to fit content */
+    display: flex;
+    flex-direction: column; /* Stack content vertically if needed */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.25rem;
+    align-items: center;
+  }
+
+  nav ul li {
+    list-style: none;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* Base fade-in animation */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flipIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+.contact-button {
+  background: #333;
+  color: white;
+  padding: 0.75em 1.25em;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #555;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-banner {
+  background: linear-gradient(to bottom right, #2c3e50, #3498db);
+  color: white;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 700px;
+  z-index: 2;
+}
+
+.hero-banner h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: white;
+  color: #2c3e50;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #ecf0f1;
+}
+
+/* Optional background decoration */
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.05);
+  transform: rotate(-5deg);
+  z-index: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}

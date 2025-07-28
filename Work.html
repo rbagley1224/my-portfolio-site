@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Riley | Web Developer </title>
+        <link rel="stylesheet" href="../style.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        
+        
+    </head>
+    <body class="work-body light-mode">
+        <canvas id="star-canvas"></canvas>
+        <canvas id="light-canvas"></canvas>
+        <div class="page-container">
+        <nav>
+            <button id="darkModeToggle" aria-pressed="false" aria-label="Toggle dark mode">Toggle Dark Mode 🌙</button>
+            <a href="Home.html">Home</a>
+            <a href="Work.html" aria-current="page">More About My Work</a>
+        </nav>
+
+        <header>
+            <h1> More About My Work</h1>
+        </header>
+
+        <main class="main-container">
+        <section class="work-intro reveal">
+            <h2>Overview</h2>
+            <p>This page show examples of my web development work — from clean landing pages and small business sites to interactive front-end projects and creative concepts.</p>
+            <p>I help small businesses, personal brands, and creatives who need a web presence that actually works.</p>
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Beautiful scenery" loading="lazy" />
+        </section>
+
+        <section class="work-projects reveal">
+            <h2>Featured Projects (Coming Soon)</h2>
+                <ul class="project-list">
+                    <li>Personal Landing Page</li>
+                    <li>Mini E-Commerce Product Layout</li>
+                    <li>Interactive Tools / Demo Apps</li>
+                </ul>
+        </section>
+
+        <section class="work-process reveal">
+          <h2>My Process</h2>
+
+          <div class="process-container">
+
+            <div class="step-group">
+            <div class="process-step" data-step="Plan">
+              <h3 class="step">Plan</h3>
+              <p class="step-details hidden">Define project goals, scope, and timeline.</p>
+            </div>
+            <span class="arrow">↓</span>
+            </div>
+
+            <div class="step-group">
+            <div class="process-step" data-step="Design">
+              <h3 class="step">Design</h3>
+              <p class="step-details hidden">Create wireframes and visual mockups.</p>
+            </div>
+            <span class="arrow">↓</span>
+            </div>
+
+            <div class="step-group">
+            <div class="process-step" data-step="Build">
+              <h3 class="step">Build</h3>
+              <p class="step-details hidden">Write clean code and develop features.</p>
+            </div>
+            <span class="arrow">↓</span>
+            </div>
+
+            <div class="step-group">
+            <div class="process-step" data-step="Review">
+              <h3 class="step">Review</h3>
+              <p class="step-details hidden">Test and polish the experience.</p>
+            </div>
+            <span class="arrow">↓</span>
+            </div>
+
+            <div class="step-group">
+            <div class="process-step" data-step="Launch">
+              <h3 class="step">Launch</h3>
+              <p class="step-details hidden">Deploy and monitor the final product.</p>
+            </div>
+            </div>
+
+          </div>
+        </section>
+
+    <section class="contact-form reveal">
+      <h2>Test Contact Form</h2>
+      <p>This form is just a test! It simulates submission and shows animations.</p>
+      <form id="testForm">
+        <div class="form-group">
+          <span class="material-icons">person</span>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <span class="material-icons">phone</span>
+          <input type="tel" id="phone" name="phone" placeholder="Phone Number" />
+        </div>
+        <div class="form-group">
+          <span class="material-icons">email</span>
+          <input type="email" id="email" name="email" placeholder="Email Address" required />
+        </div>
+        <div class="form-group">
+          <span class="material-icons">chat</span>
+          <textarea id="comment" name="comment" placeholder="Your Comment"></textarea>
+        </div>
+        <button type="submit" class="contact-button">Submit</button>
+        <div class="spinner" id="spinner"></div>
+        <div class="success-message" id="successMessage">Thanks! Form submitted (test)</div>
+      </form>
+    </section>
+
+        </main>
+
+        <button id="backToTop" title="Back to top">↑</button>
+
+        <footer>
+            <p>© 2025 Riley Bagley</p>
+        </footer>
+        </div>
+        <script src="../script.js"></script>
+    </body>
+</html>
